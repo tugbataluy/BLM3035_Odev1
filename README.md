@@ -10,7 +10,9 @@ Harflerin renginin değiştirilmesinin kullanıcıdan gelen girdiler doğrultusu
 ## Kullanılan temel diller
 ->HTML\
 ->Javascript\
-->GLSL
+->GLSL\
 
+Letter.js hariç yer alan .js uzantılı dosyalar Edward Angel'ın grafik kitaplarında yer alan kodlardır. Link\
+https://www.cs.unm.edu/~angel/BOOK/INTERACTIVE_COMPUTER_GRAPHICS/SEVENTH_EDITION/
 
 
