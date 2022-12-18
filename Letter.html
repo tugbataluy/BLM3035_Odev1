@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grafik Ödevi</title>
+  </head>
+  <body>
+    <canvas id="glcanvas" width="512" height="512"></canvas>
+    <div>
+      <font face="Verdana"
+        >"Harflerin renginin değişmesi için bir renk seçin. Seçiminiz renk
+        penceresini kapattığınızda aktif olacaktır."</font
+      >
+
+      <input
+        type="color"
+        id="letter-color"
+        value="#FF0000"
+        onchange="changeColor()"
+      />
+    </div>
+    <div>
+      <label><font face="Verdana">Yatayda öteleme:</font></label>
+      <input type="number" step="0.01" id="x_move" value="0.05" min="0.0" />
+      <label> <font face="Verdana">Dikeyde öteleme:</font></label>
+      <input type="number" , step="0.01" id="y_move" value="0.05" min="0.0" />
+      <label><font face="Verdana">(WASD Tuşlarını kullanınız.)</font></label>
+    </div>
+    <div>
+      <font face="Verdana">Büyüme Küçülme Oranı:</font>
+      <input type="number" id="scale" step="0.01" value="1.0" min="1.0" />
+      <font face="Verdana"
+        >Büyüme için "E", Küçülme için "X" kısayollarını kullanın.</font
+      >
+    </div>
+    <div>
+      <font face="Verdana"
+        >Hız değerini artırıp R tuşuna basarak döndürmeyi başlatabilir, P tuşu
+        ile duraklatabilirsiniz.</font
+      >
+      <button id="Rotation" onclick="ChangeDir()">
+        <font face="Verdana">Yön Değiştirme</font>
+      </button>
+      <button id="Speed_up" onclick="changeSpeed(this.id)">
+        <font face="Verdana">Hızı artır.</font>
+      </button>
+      <button id="Speed_down" onclick="changeSpeed(this.id)">
+        <font face="Verdana">Hızı azalt.</font>
+      </button>
+      <br />
+      <font face="Verdana">Hız:</font><input type="text" id="speed" />
+    </div>
+  </body>
+</html>
+<script src="Letter.js"></script>
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+  attribute vec4 vPosition;
+  uniform float theta;
+  void main(){
+  gl_Position.x=cos(theta)*vPosition.x-sin(theta)*vPosition.y;
+    gl_Position.y=sin(theta)*vPosition.x+cos(theta)*vPosition.y;
+    gl_Position.z=0.0;
+    gl_Position.w=1.0;
+  }
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+
+  precision mediump float;
+  uniform vec3 vcol;
+  void main() {
+
+     gl_FragColor = vec4(vcol,1.0);
+    }
+</script>
+<script src="../common/initShaders.js"></script>
+<script src="../common/MV.js"></script>
+<script src="../common/webgl-utils.js"></script>
