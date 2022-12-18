@@ -7,7 +7,7 @@ Bunun hariçi temel dönüşümlerin,\
 ->Büyültme küçültme\
 Harflerin renginin değiştirilmesinin kullanıcıdan gelen girdiler doğrultusunda yapılması istenmiştir.\
 \
-##Kullanılan temel diller\
+## Kullanılan temel diller\
 ->HTML\
 ->Javascript\
 ->GLSL
