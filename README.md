@@ -5,7 +5,7 @@ Bunun hariçi temel dönüşümlerin,\
 -> Döndürme\
 -> Öteleme\
 ->Büyültme küçültme\
-Harflerin renginin değiştirilmesinin kullanıcıdan gelen girdiler doğrultusunda yapılması istenmiştir.\
+Harflerin renginin değiştirilmesinin kullanıcıdan gelen girdiler doğrultusunda yapılması istenmiştir.
 
 ## Kullanılan temel diller
 ->HTML\
